@@ -1,0 +1,37 @@
+<%- include ('partials/_header.ejs')%>
+
+
+    <center>
+        <img src="https://cdn.pixabay.com/photo/2017/03/13/23/31/icon-2141485_1280.png" width="200px" height="200px"
+            class="img-fluid mt-4" alt="Responsive image">
+        <h1 class="mt-3">TASK MANAGER</h1>
+    </center>
+    <div class="bg-light container ">
+        <div class="row">
+            <div class="col-md-8 offset-2 mb-5 bg-dark">
+                <div class="card bg-dark">
+                    <div class="card-body bg-dark">
+                        <form action="/edit/<%= contact._id %>" method="POST">
+                            <div class="form-group bg-dark">
+                                <label class="text-light bg-secondary border-dark form-control" for="name">Task</label>
+                                <input  value= "<%= contact.name %>"
+                                type="text"  name="name" class="form-control" />
+                            </div>
+                            <div class="form-group bg-dark" >
+                                <label class="text-light bg-secondary border-dark form-control" for="last_name">Description</label>
+                                <input value="<%= contact.last_name %>" type="text" name="last_name" class="form-control" />
+                            </div>
+                             <div class="form-group bg-dark">
+                                <label class="text-light bg-secondary border-dark form-control" for="address">Date</label>
+                                <input value="<%= contact.address %>" type="date" name="address" class="form-control" />
+                            </div>
+                           
+                            <button class="btn btn-primary mt-3" type="submit">Refresh</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include ('partials/_footer.ejs')%>

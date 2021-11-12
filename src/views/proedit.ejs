@@ -1,0 +1,32 @@
+<%- include ('partials/_header.ejs')%>
+
+
+    <h1>Product Manager</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-2 mb-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/proedit/<%= products._id %>" method="POST">
+                            <div class="form-group">
+                                <input value="<%= products.product %>" type="text" name="product" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <input value="<%= products.description %>" type="text" name="description"
+                                    class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <input value="<%= products.price %>" type="text" name="price" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <input value="<%= products.stock %>" type="text" name="stock" class="form-control" />
+                            </div>
+                           <button class="btn btn-primary" type="submit">Actualizar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include ('partials/_footer.ejs')%>
