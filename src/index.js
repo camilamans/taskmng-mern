@@ -5,7 +5,6 @@ const express = require ('express');
 const path = require ('path');
 
 const indexRouter = require ('./routes');
-const prodRouter = require ('./routes/productos');
 
 const mongoose = require ('mongoose');
 
@@ -27,7 +26,6 @@ server.use(express.json());
 server.use (express.urlencoded ({encoded: false}));
 
 server.use ('/', indexRouter);
-server.use ('/productos', prodRouter);
 
 server. listen (process.env.PORT, ()=> {
     console.log (`El servidor está corriendo en el Puerto ${process.env.PORT}`);
